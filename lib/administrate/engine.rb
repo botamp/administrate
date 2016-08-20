@@ -22,6 +22,12 @@ module Administrate
     @@javascripts = []
     @@stylesheets = []
 
+    if Sprockets::VERSION.start_with?('4')
+      Engine.config.assets.precompile += %w(administrate/manifest.js)
+    else
+      Engine.config.assets.precompile << /\.(?:svg)\z/
+    end
+
     def self.add_javascript(script)
       @@javascripts << script
     end
