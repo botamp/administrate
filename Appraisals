@@ -19,3 +19,7 @@ appraise "rails51" do
   gem "actionview", "~> 5.1.0"
   gem "activerecord", "~> 5.1.0"
 end
+
+appraise "sprockets4" do
+  gem "sprockets", "4.0.0.beta2"
+end
